@@ -1,6 +1,6 @@
 /**
- * Vue-Quill-Editor
- * @author Surmon.me
+ * Vue-Pell-Editor
+ * @author Pell
  */
 import Vue from 'vue'
 import WYSIWYG from './editor'

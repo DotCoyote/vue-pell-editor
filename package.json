@@ -16,7 +16,7 @@
     "vue web editor",
     "vue editor"
   ],
-  "main": "index.js",
+  "main": "src/js/editor.vue",
   "repository": "https://github.com/CinKon/vue-pell-editor.git",
   "scripts": {
     "assets": "gulp copy:assets --env=init",

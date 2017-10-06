@@ -24,7 +24,7 @@
     methods: {
       init () {
         if (this.$el) {
-          this.pell = pell.init({
+          const options = {
             element: this.$refs.editor,
 
             onChange: (html) => {
@@ -37,7 +37,13 @@
             },
 
             styleWithCSS: this.styleWithCss
-          })
+          }
+
+          if (this.actions.length > 0) {
+            options.actions = this.actions
+          }
+
+          this.pell = pell.init(options)
 
           if (this.content) {
             this.$refs.editor.content.innerHTML = this.content
