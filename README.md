@@ -22,6 +22,7 @@ $ yarn add vue-pell-editor
         v-model="editorContent"
         :styleWithCss="false"
         editorHeight="400px"
+        @change="doSomething"
     />
 </template>
 
@@ -64,6 +65,11 @@ $ yarn add vue-pell-editor
         }),
         components: {
             VuePellEditor
+        },
+        methods: {
+            doSomething () {
+                console.log('Hello')
+            }
         }
     }
 </script>
