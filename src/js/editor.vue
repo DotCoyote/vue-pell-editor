@@ -45,8 +45,8 @@
 
           this.pell = pell.init(options)
 
-          if (this.content) {
-            this.$refs.editor.content.innerHTML = this.content
+          if (this.content || this.value) {
+            this.$refs.editor.content.innerHTML = (this.content || this.value)
           }
 
           if (this.editorHeight) {
@@ -62,6 +62,9 @@
       content: {
         type: String
       },
+      value: {
+        type: String
+      },
       placeholder: {
         type: String,
         default: 'Write something amazing...'
@@ -72,6 +75,28 @@
       styleWithCss: {
         type: Boolean,
         default: false
+      }
+    },
+    watch: {
+      content: function (newVal, oldVal) {
+        if (this.pell) {
+          if (!!newVal && newVal !== this.vpContent) {
+            this.vpContent = newVal
+            this.$refs.editor.content.innerHTML = newVal
+          } else if (!newVal) {
+            this.$refs.editor.content.innerHTML = ''
+          }
+        }
+      },
+      value: function (newVal, oldVal) {
+        if (this.pell) {
+          if (!!newVal && newVal !== this.vpContent) {
+            this.vpContent = newVal
+            this.$refs.editor.content.innerHTML = newVal
+          } else if (!newVal) {
+            this.$refs.editor.content.innerHTML = ''
+          }
+        }
       }
     }
   }
