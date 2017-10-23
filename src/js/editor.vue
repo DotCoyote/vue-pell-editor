@@ -39,7 +39,7 @@
             styleWithCSS: this.styleWithCss
           }
 
-          if (this.actions.length > 0) {
+          if (this.actions && this.actions.length > 0) {
             options.actions = this.actions
           }
 
@@ -47,6 +47,7 @@
 
           if (this.content || this.value) {
             this.$refs.editor.content.innerHTML = (this.content || this.value)
+            this.vpContent = (this.content || this.value)
           }
 
           if (this.editorHeight) {
@@ -78,7 +79,7 @@
       }
     },
     watch: {
-      content: function (newVal, oldVal) {
+      content: function (newVal, oldVal) { // eslint-disable-line
         if (this.pell) {
           if (!!newVal && newVal !== this.vpContent) {
             this.vpContent = newVal
@@ -88,7 +89,7 @@
           }
         }
       },
-      value: function (newVal, oldVal) {
+      value: function (newVal, oldVal) { // eslint-disable-line
         if (this.pell) {
           if (!!newVal && newVal !== this.vpContent) {
             this.vpContent = newVal

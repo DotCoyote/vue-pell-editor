@@ -58,8 +58,8 @@ function resolve (dir) {
   return path.join(__dirname, '..', dir)
 }
 
-function assetsPath(_path) {
-  return path.posix.join('./', _path);
+function assetsPath (_path) {
+  return path.posix.join('./', _path)
 }
 
 const CSS_LOADERS = [
@@ -90,7 +90,7 @@ const CSS_LOADERS = [
  |--------------------------------------------------------------------------
  */
 module.exports = {
-  // devtool: ifProduction('#source-map', '#cheap-module-eval-source-map'),
+  devtool: ifDevelopment('#cheap-module-eval-source-map'),
   context: path.join(ROOT_PATH, 'src'),
   entry: removeEmpty(entryPoints),
   output: {
@@ -139,9 +139,9 @@ module.exports = {
             scss: ifProduction(
               ExtractTextPlugin.extract({
                 use: [...CSS_LOADERS],
-                fallback: 'vue-style-loader',
+                fallback: 'vue-style-loader'
               }),
-              [{ loader: 'vue-style-loader'}, ...CSS_LOADERS]
+              [{ loader: 'vue-style-loader' }, ...CSS_LOADERS]
             )
           }
         }
@@ -213,7 +213,7 @@ module.exports = {
     })),
     new ExtractTextPlugin({
       filename: assetsPath('[name].css'),
-      allChunks: true,
+      allChunks: true
     }),
     ifProduction(
       new OptimizeCSSPlugin({
