@@ -1233,10 +1233,6 @@ boom@5.x.x:
   dependencies:
     hoek "4.x.x"
 
-bowser@^1.7.1:
-  version "1.7.3"
-  resolved "https://registry.yarnpkg.com/bowser/-/bowser-1.7.3.tgz#504bdb43118ca8db9cbbadf28fd60f265af96e4f"
-
 brace-expansion@^1.0.0, brace-expansion@^1.1.7:
   version "1.1.8"
   resolved "https://registry.yarnpkg.com/brace-expansion/-/brace-expansion-1.1.8.tgz#c07b211c7c952ec1f8efd51a77ef0d1d3990a292"
@@ -5495,10 +5491,6 @@ lazy-req@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/lazy-req/-/lazy-req-1.1.0.tgz#bdaebead30f8d824039ce0ce149d4daa07ba1fac"
 
-lazysizes@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.yarnpkg.com/lazysizes/-/lazysizes-3.0.0.tgz#b1bacb5a0f28113ffa7b389ce2f35f1cff19d9b9"
-
 lazystream@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/lazystream/-/lazystream-1.0.0.tgz#f6995fe0f820392f61396be89462407bb77168e4"
@@ -7104,9 +7096,9 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-pell@^0.7.0:
+pell@jaredreich/pell.git#69/head:
   version "0.7.0"
-  resolved "https://registry.yarnpkg.com/pell/-/pell-0.7.0.tgz#46b3fcdfa8dd7e5999f73c550a337ecc80193dcc"
+  resolved "https://codeload.github.com/jaredreich/pell/tar.gz/5009e765ce0a79ec3d38f4b25feb3618170281aa"
 
 pend@~1.2.0:
   version "1.2.0"
@@ -7938,10 +7930,6 @@ punycode@1.3.2:
 punycode@^1.2.4, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
-
-pyrsmk-toast@^2.1.1:
-  version "2.2.0"
-  resolved "https://registry.yarnpkg.com/pyrsmk-toast/-/pyrsmk-toast-2.2.0.tgz#a9de045fe4780148e4099418aac87cffe7798b0f"
 
 q@^1.1.2:
   version "1.5.0"
@@ -9393,10 +9381,6 @@ svgo@^0.7.0, svgo@^0.7.2:
     mkdirp "~0.5.1"
     sax "~1.2.1"
     whet.extend "~0.9.9"
-
-svgxuse@^1.2.1:
-  version "1.2.4"
-  resolved "https://registry.yarnpkg.com/svgxuse/-/svgxuse-1.2.4.tgz#bb5eb73ae23c18c32288f47e6a7136e3818c548b"
 
 synesthesia@^1.0.1:
   version "1.0.1"
