@@ -5,7 +5,7 @@
 </template>
 
 <script>
-  import pell from 'pell'
+  import pell from './pell'
 
   export default {
     name: 'VuePellEditor',

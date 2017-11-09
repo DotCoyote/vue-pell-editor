@@ -7096,9 +7096,9 @@ pbkdf2@^3.0.3:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-pell@jaredreich/pell.git#69/head:
-  version "0.7.0"
-  resolved "https://codeload.github.com/jaredreich/pell/tar.gz/5009e765ce0a79ec3d38f4b25feb3618170281aa"
+pell@^0.5.0:
+  version "0.5.0"
+  resolved "https://registry.yarnpkg.com/pell/-/pell-0.5.0.tgz#6e07ab3c72230d54c2ddfd8628252c1a15e02cbf"
 
 pend@~1.2.0:
   version "1.2.0"

@@ -1,6 +1,6 @@
 {
   "name": "vue-pell-editor",
-  "version": "0.0.9",
+  "version": "0.0.10",
   "description": "pell editor component for Vue",
   "license": "MIT",
   "author": {
@@ -37,7 +37,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.23.0",
-    "pell": "jaredreich/pell.git#69/head",
+    "pell": "^0.5.0",
     "vue": "^2.4.0"
   },
   "devDependencies": {
