@@ -1,131 +1,175 @@
-const actions = {
+/* eslint-disable */
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.pell = {})));
+}(this, (function (exports) { 'use strict';
+
+var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+
+var actions = {
   bold: {
     icon: '<b>B</b>',
     title: 'Bold',
-    result: () => exec('bold')
+    result: function result() {
+      return exec('bold');
+    }
   },
   italic: {
     icon: '<i>I</i>',
     title: 'Italic',
-    result: () => exec('italic')
+    result: function result() {
+      return exec('italic');
+    }
   },
   underline: {
     icon: '<u>U</u>',
     title: 'Underline',
-    result: () => exec('underline')
+    result: function result() {
+      return exec('underline');
+    }
   },
   strikethrough: {
     icon: '<strike>S</strike>',
     title: 'Strike-through',
-    result: () => exec('strikeThrough')
+    result: function result() {
+      return exec('strikeThrough');
+    }
   },
   heading1: {
     icon: '<b>H<sub>1</sub></b>',
     title: 'Heading 1',
-    result: () => exec('formatBlock', '<H1>')
+    result: function result() {
+      return exec('formatBlock', '<H1>');
+    }
   },
   heading2: {
     icon: '<b>H<sub>2</sub></b>',
     title: 'Heading 2',
-    result: () => exec('formatBlock', '<H2>')
+    result: function result() {
+      return exec('formatBlock', '<H2>');
+    }
   },
   paragraph: {
     icon: '&#182;',
     title: 'Paragraph',
-    result: () => exec('formatBlock', '<P>')
+    result: function result() {
+      return exec('formatBlock', '<P>');
+    }
   },
   quote: {
     icon: '&#8220; &#8221;',
     title: 'Quote',
-    result: () => exec('formatBlock', '<BLOCKQUOTE>')
+    result: function result() {
+      return exec('formatBlock', '<BLOCKQUOTE>');
+    }
   },
   olist: {
     icon: '&#35;',
     title: 'Ordered List',
-    result: () => exec('insertOrderedList')
+    result: function result() {
+      return exec('insertOrderedList');
+    }
   },
   ulist: {
     icon: '&#8226;',
     title: 'Unordered List',
-    result: () => exec('insertUnorderedList')
+    result: function result() {
+      return exec('insertUnorderedList');
+    }
   },
   code: {
     icon: '&lt;/&gt;',
     title: 'Code',
-    result: () => exec('formatBlock', '<PRE>')
+    result: function result() {
+      return exec('formatBlock', '<PRE>');
+    }
   },
   line: {
     icon: '&#8213;',
     title: 'Horizontal Line',
-    result: () => exec('insertHorizontalRule')
+    result: function result() {
+      return exec('insertHorizontalRule');
+    }
   },
   link: {
     icon: '&#128279;',
     title: 'Link',
-    result: () => {
-      const url = window.prompt('Enter the link URL')
-      if (url) exec('createLink', url)
+    result: function result() {
+      var url = window.prompt('Enter the link URL');
+      if (url) exec('createLink', url);
     }
   },
   image: {
     icon: '&#128247;',
     title: 'Image',
-    result: () => {
-      const url = window.prompt('Enter the image URL')
-      if (url) exec('insertImage', url)
+    result: function result() {
+      var url = window.prompt('Enter the image URL');
+      if (url) exec('insertImage', url);
     }
   }
-}
+};
 
-const classes = {
+var classes = {
   actionbar: 'pell-actionbar',
   button: 'pell-button',
   content: 'pell-content'
-}
+};
 
-export const exec = (command, value = null) => {
-  document.execCommand(command, false, value)
-}
+var exec = function exec(command) {
+  var value = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
 
-const preventTab = event => {
-  if (event.which === 9) event.preventDefault()
-}
+  document.execCommand(command, false, value);
+};
 
-export const init = settings => {
-  settings.actions = settings.actions
-    ? settings.actions.map(action => {
-      if (typeof action === 'string') return actions[action]
-      else if (actions[action.name]) return { ...actions[action.name], ...action }
-      return action
-    })
-    : Object.keys(actions).map(action => actions[action])
+var preventTab = function preventTab(event) {
+  if (event.which === 9) event.preventDefault();
+};
 
-  settings.classes = { ...classes, ...settings.classes }
+var init = function init(settings) {
+  settings.actions = settings.actions ? settings.actions.map(function (action) {
+    if (typeof action === 'string') return actions[action];else if (actions[action.name]) return _extends({}, actions[action.name], action);
+    return action;
+  }) : Object.keys(actions).map(function (action) {
+    return actions[action];
+  });
 
-  const actionbar = document.createElement('div')
-  actionbar.className = settings.classes.actionbar
-  settings.element.appendChild(actionbar)
+  settings.classes = _extends({}, classes, settings.classes);
 
-  settings.element.content = document.createElement('div')
-  settings.element.content.contentEditable = true
-  settings.element.content.className = settings.classes.content
-  settings.element.content.oninput = event => settings.onChange(event.target.innerHTML)
-  settings.element.content.onkeydown = preventTab
-  settings.element.appendChild(settings.element.content)
+  var actionbar = document.createElement('div');
+  actionbar.className = settings.classes.actionbar;
+  settings.element.appendChild(actionbar);
 
-  settings.actions.forEach(action => {
-    const button = document.createElement('button')
-    button.className = settings.classes.button
-    button.innerHTML = action.icon
-    button.title = action.title
-    button.onclick = action.result
-    button.setAttribute('type', 'button')
-    actionbar.appendChild(button)
-  })
+  settings.element.content = document.createElement('div');
+  settings.element.content.contentEditable = true;
+  settings.element.content.className = settings.classes.content;
+  settings.element.content.oninput = function (event) {
+    return settings.onChange(event.target.innerHTML);
+  };
+  settings.element.content.onkeydown = preventTab;
+  settings.element.appendChild(settings.element.content);
 
-  if (settings.styleWithCSS) exec('styleWithCSS')
+  settings.actions.forEach(function (action) {
+    var button = document.createElement('button');
+    button.className = settings.classes.button;
+    button.innerHTML = action.icon;
+    button.title = action.title;
+    button.onclick = action.result;
+    button.setAttribute('type', 'button');
+    actionbar.appendChild(button);
+  });
 
-  return settings.element
-}
+  if (settings.styleWithCSS) exec('styleWithCSS');
 
-export default { exec, init }
+  return settings.element;
+};
+
+var pell = { exec: exec, init: init };
+
+exports.exec = exec;
+exports.init = init;
+exports['default'] = pell;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
