@@ -36,7 +36,6 @@
     "webpack:analyze": "webpack-bundle-analyzer webpack/stats.json dist/"
   },
   "dependencies": {
-    "babel-polyfill": "^6.23.0",
     "pell": "^0.5.0",
     "vue": "^2.4.0"
   },
