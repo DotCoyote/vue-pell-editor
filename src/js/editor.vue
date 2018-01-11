@@ -1,107 +1,122 @@
 <template lang="html">
-  <div ref="editor" class="vp-editor">
-    <div class="vp-editor__placeholder" v-if="(vpContent === '' || vpContent === '<br>') && placeholder" @click="$refs.editor.content.focus()">{{ placeholder }}</div>
+  <div
+    ref="editor"
+    class="vp-editor"
+  >
+    <div
+      class="vp-editor__placeholder"
+      v-if="(vpContent === '' || vpContent === '<br>') && placeholder"
+      @click="$refs.editor.content.focus()"
+    >
+      {{ placeholder }}
+    </div>
   </div>
 </template>
 
 <script>
-  import pell from './pell'
+import pell from './pell'
 
-  export default {
-    name: 'VuePellEditor',
-    data: () => ({
-      vpContent: ''
-    }),
-    beforeDestroy () {
-      this.pell = null
+export default {
+  name: 'VuePellEditor',
+  components: {
+    pell
+  },
+  props: {
+    actions: {
+      type: Array,
+      default: () => []
     },
-    components: {
-      pell
+    content: {
+      type: String,
+      default: ''
     },
-    mounted () {
-      this.init()
+    value: {
+      type: String,
+      default: ''
     },
-    methods: {
-      init () {
-        if (this.$el) {
-          const options = {
-            element: this.$refs.editor,
-
-            onChange: (html) => {
-              this.vpContent = html
-              this.$emit('input', html)
-              this.$emit('change', {
-                editor: this.pell,
-                html: html
-              })
-            },
-
-            styleWithCSS: this.styleWithCss
-          }
-
-          if (this.actions && this.actions.length > 0) {
-            options.actions = this.actions
-          }
-
-          this.pell = pell.init(options)
-          window.pell = this.pell
-
-          if (this.content || this.value) {
-            this.$refs.editor.content.innerHTML = (this.content || this.value)
-            this.vpContent = (this.content || this.value)
-          }
-
-          if (this.editorHeight) {
-            this.$refs.editor.content.style.height = this.editorHeight
-          }
+    placeholder: {
+      type: String,
+      default: 'Write something amazing...'
+    },
+    editorHeight: {
+      type: String,
+      default: ''
+    },
+    styleWithCss: {
+      type: Boolean,
+      default: false
+    }
+  },
+  data: () => ({
+    vpContent: ''
+  }),
+  watch: {
+    content: function (newVal, oldVal) { // eslint-disable-line
+      if (this.pell) {
+        if (!!newVal && newVal !== this.vpContent) {
+          this.vpContent = newVal
+          this.$refs.editor.content.innerHTML = newVal
+        } else if (!newVal) {
+          this.$refs.editor.content.innerHTML = ''
         }
       }
     },
-    props: {
-      actions: {
-        type: Array
-      },
-      content: {
-        type: String
-      },
-      value: {
-        type: String
-      },
-      placeholder: {
-        type: String,
-        default: 'Write something amazing...'
-      },
-      editorHeight: {
-        default: false
-      },
-      styleWithCss: {
-        type: Boolean,
-        default: false
-      }
-    },
-    watch: {
-      content: function (newVal, oldVal) { // eslint-disable-line
-        if (this.pell) {
-          if (!!newVal && newVal !== this.vpContent) {
-            this.vpContent = newVal
-            this.$refs.editor.content.innerHTML = newVal
-          } else if (!newVal) {
-            this.$refs.editor.content.innerHTML = ''
-          }
+    value: function (newVal, oldVal) { // eslint-disable-line
+      if (this.pell) {
+        if (!!newVal && newVal !== this.vpContent) {
+          this.vpContent = newVal
+          this.$refs.editor.content.innerHTML = newVal
+        } else if (!newVal) {
+          this.$refs.editor.content.innerHTML = ''
         }
-      },
-      value: function (newVal, oldVal) { // eslint-disable-line
-        if (this.pell) {
-          if (!!newVal && newVal !== this.vpContent) {
-            this.vpContent = newVal
-            this.$refs.editor.content.innerHTML = newVal
-          } else if (!newVal) {
-            this.$refs.editor.content.innerHTML = ''
-          }
+      }
+    }
+  },
+  beforeDestroy () {
+    this.pell = null
+  },
+  mounted () {
+    this.init()
+  },
+  methods: {
+    init () {
+      if (this.$el) {
+        const options = {
+          element: this.$refs.editor,
+
+          onChange: (html) => {
+            this.vpContent = html
+            this.$emit('input', html)
+            this.$emit('change', {
+              editor: this.pell,
+              html: html
+            })
+          },
+
+          styleWithCSS: this.styleWithCss
+        }
+
+        if (this.actions && this.actions.length > 0) {
+          options.actions = this.actions
+        }
+
+        const pellEditor = pell.init(options)
+
+        this.pell = pellEditor
+        window.pell = pell
+
+        if (this.content || this.value) {
+          this.$refs.editor.content.innerHTML = (this.content || this.value)
+          this.vpContent = (this.content || this.value)
+        }
+
+        if (this.editorHeight !== '') {
+          this.$refs.editor.content.style.height = this.editorHeight
         }
       }
     }
   }
+}
 </script>
 
 <style lang="scss">

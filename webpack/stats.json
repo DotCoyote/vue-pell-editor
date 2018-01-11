@@ -2,8 +2,8 @@
   "errors": [],
   "warnings": [],
   "version": "3.10.0",
-  "hash": "fa397bd0e206ebedb14b",
-  "time": 7244,
+  "hash": "ba4d8c066fdb43d3f803",
+  "time": 6867,
   "publicPath": "/./",
   "assetsByChunkName": {
     "vue-pell-editor": [
@@ -14,7 +14,7 @@
   "assets": [
     {
       "name": "vue-pell-editor.js",
-      "size": 91633,
+      "size": 91725,
       "chunks": [
         0
       ],
@@ -54,7 +54,7 @@
       "initial": true,
       "entry": true,
       "extraAsync": false,
-      "size": 272957,
+      "size": 273171,
       "names": [
         "vue-pell-editor"
       ],
@@ -62,7 +62,7 @@
         "vue-pell-editor.js",
         "vue-pell-editor.css"
       ],
-      "hash": "7981c819088f109b21b2",
+      "hash": "92f64ab2137ee5361cd6",
       "parents": [],
       "modules": [
         {
@@ -2140,7 +2140,7 @@
           "name": "./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/js/editor.vue",
           "index": 10,
           "index2": 84,
-          "size": 2594,
+          "size": 2792,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -2179,7 +2179,7 @@
           "providedExports": null,
           "optimizationBailout": [],
           "depth": 2,
-          "source": "\"use strict\";\n\nvar _interopRequireDefault = require(\"@babel/runtime/helpers/interopRequireDefault\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _pell = _interopRequireDefault(require(\"./pell\"));\n\n//\n//\n//\n//\n//\n//\nvar _default = {\n  name: 'VuePellEditor',\n  data: function data() {\n    return {\n      vpContent: ''\n    };\n  },\n  beforeDestroy: function beforeDestroy() {\n    this.pell = null;\n  },\n  components: {\n    pell: _pell.default\n  },\n  mounted: function mounted() {\n    this.init();\n  },\n  methods: {\n    init: function init() {\n      var _this = this;\n\n      if (this.$el) {\n        var options = {\n          element: this.$refs.editor,\n          onChange: function onChange(html) {\n            _this.vpContent = html;\n\n            _this.$emit('input', html);\n\n            _this.$emit('change', {\n              editor: _this.pell,\n              html: html\n            });\n          },\n          styleWithCSS: this.styleWithCss\n        };\n\n        if (this.actions && this.actions.length > 0) {\n          options.actions = this.actions;\n        }\n\n        this.pell = _pell.default.init(options);\n        window.pell = this.pell;\n\n        if (this.content || this.value) {\n          this.$refs.editor.content.innerHTML = this.content || this.value;\n          this.vpContent = this.content || this.value;\n        }\n\n        if (this.editorHeight) {\n          this.$refs.editor.content.style.height = this.editorHeight;\n        }\n      }\n    }\n  },\n  props: {\n    actions: {\n      type: Array\n    },\n    content: {\n      type: String\n    },\n    value: {\n      type: String\n    },\n    placeholder: {\n      type: String,\n      default: 'Write something amazing...'\n    },\n    editorHeight: {\n      default: false\n    },\n    styleWithCss: {\n      type: Boolean,\n      default: false\n    }\n  },\n  watch: {\n    content: function content(newVal, oldVal) {\n      // eslint-disable-line\n      if (this.pell) {\n        if (!!newVal && newVal !== this.vpContent) {\n          this.vpContent = newVal;\n          this.$refs.editor.content.innerHTML = newVal;\n        } else if (!newVal) {\n          this.$refs.editor.content.innerHTML = '';\n        }\n      }\n    },\n    value: function value(newVal, oldVal) {\n      // eslint-disable-line\n      if (this.pell) {\n        if (!!newVal && newVal !== this.vpContent) {\n          this.vpContent = newVal;\n          this.$refs.editor.content.innerHTML = newVal;\n        } else if (!newVal) {\n          this.$refs.editor.content.innerHTML = '';\n        }\n      }\n    }\n  }\n};\nexports.default = _default;"
+          "source": "\"use strict\";\n\nvar _interopRequireDefault = require(\"@babel/runtime/helpers/interopRequireDefault\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _pell = _interopRequireDefault(require(\"./pell\"));\n\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default2 = {\n  name: 'VuePellEditor',\n  components: {\n    pell: _pell.default\n  },\n  props: {\n    actions: {\n      type: Array,\n      default: function _default() {\n        return [];\n      }\n    },\n    content: {\n      type: String,\n      default: ''\n    },\n    value: {\n      type: String,\n      default: ''\n    },\n    placeholder: {\n      type: String,\n      default: 'Write something amazing...'\n    },\n    editorHeight: {\n      type: String,\n      default: ''\n    },\n    styleWithCss: {\n      type: Boolean,\n      default: false\n    }\n  },\n  data: function data() {\n    return {\n      vpContent: ''\n    };\n  },\n  watch: {\n    content: function content(newVal, oldVal) {\n      // eslint-disable-line\n      if (this.pell) {\n        if (!!newVal && newVal !== this.vpContent) {\n          this.vpContent = newVal;\n          this.$refs.editor.content.innerHTML = newVal;\n        } else if (!newVal) {\n          this.$refs.editor.content.innerHTML = '';\n        }\n      }\n    },\n    value: function value(newVal, oldVal) {\n      // eslint-disable-line\n      if (this.pell) {\n        if (!!newVal && newVal !== this.vpContent) {\n          this.vpContent = newVal;\n          this.$refs.editor.content.innerHTML = newVal;\n        } else if (!newVal) {\n          this.$refs.editor.content.innerHTML = '';\n        }\n      }\n    }\n  },\n  beforeDestroy: function beforeDestroy() {\n    this.pell = null;\n  },\n  mounted: function mounted() {\n    this.init();\n  },\n  methods: {\n    init: function init() {\n      var _this = this;\n\n      if (this.$el) {\n        var options = {\n          element: this.$refs.editor,\n          onChange: function onChange(html) {\n            _this.vpContent = html;\n\n            _this.$emit('input', html);\n\n            _this.$emit('change', {\n              editor: _this.pell,\n              html: html\n            });\n          },\n          styleWithCSS: this.styleWithCss\n        };\n\n        if (this.actions && this.actions.length > 0) {\n          options.actions = this.actions;\n        }\n\n        var pellEditor = _pell.default.init(options);\n\n        this.pell = pellEditor;\n        window.pell = _pell.default;\n\n        if (this.content || this.value) {\n          this.$refs.editor.content.innerHTML = this.content || this.value;\n          this.vpContent = this.content || this.value;\n        }\n\n        if (this.editorHeight !== '') {\n          this.$refs.editor.content.style.height = this.editorHeight;\n        }\n      }\n    }\n  }\n};\nexports.default = _default2;"
         },
         {
           "id": 32,
@@ -2337,9 +2337,9 @@
             0
           ],
           "assets": [],
-          "issuer": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/core-js/library/modules/_object-dp.js",
-          "issuerId": 5,
-          "issuerName": "./node_modules/core-js/library/modules/_object-dp.js",
+          "issuer": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/core-js/library/modules/_object-gopd.js",
+          "issuerId": 83,
+          "issuerName": "./node_modules/core-js/library/modules/_object-gopd.js",
           "failed": false,
           "errors": 0,
           "warnings": 0,
@@ -2822,12 +2822,12 @@
           "providedExports": null,
           "optimizationBailout": [],
           "depth": 1,
-          "source": "function injectStyle (ssrContext) {\n  require(\"!!../../node_modules/extract-text-webpack-plugin/dist/loader.js?{\\\"omit\\\":1,\\\"remove\\\":true}!vue-style-loader!css-loader?{\\\"url\\\":true}!../../node_modules/vue-loader/lib/style-compiler/index?{\\\"vue\\\":true,\\\"id\\\":\\\"data-v-62cc53c3\\\",\\\"scoped\\\":false,\\\"hasInlineConfig\\\":false}!postcss-loader?{\\\"config\\\":{\\\"ctx\\\":{\\\"normalize\\\":false}}}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./editor.vue\")\n}\nvar normalizeComponent = require(\"!../../node_modules/vue-loader/lib/component-normalizer\")\n/* script */\nexport * from \"!!babel-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0!./editor.vue\"\nimport __vue_script__ from \"!!babel-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0!./editor.vue\"\n/* template */\nimport __vue_template__ from \"!!../../node_modules/vue-loader/lib/template-compiler/index?{\\\"id\\\":\\\"data-v-62cc53c3\\\",\\\"hasScoped\\\":false,\\\"buble\\\":{\\\"transforms\\\":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0!./editor.vue\"\n/* template functional */\nvar __vue_template_functional__ = false\n/* styles */\nvar __vue_styles__ = injectStyle\n/* scopeId */\nvar __vue_scopeId__ = null\n/* moduleIdentifier (server only) */\nvar __vue_module_identifier__ = null\nvar Component = normalizeComponent(\n  __vue_script__,\n  __vue_template__,\n  __vue_template_functional__,\n  __vue_styles__,\n  __vue_scopeId__,\n  __vue_module_identifier__\n)\n\nexport default Component.exports\n"
+          "source": "function injectStyle (ssrContext) {\n  require(\"!!../../node_modules/extract-text-webpack-plugin/dist/loader.js?{\\\"omit\\\":1,\\\"remove\\\":true}!vue-style-loader!css-loader?{\\\"url\\\":true}!../../node_modules/vue-loader/lib/style-compiler/index?{\\\"vue\\\":true,\\\"id\\\":\\\"data-v-52b2b71a\\\",\\\"scoped\\\":false,\\\"hasInlineConfig\\\":false}!postcss-loader?{\\\"config\\\":{\\\"ctx\\\":{\\\"normalize\\\":false}}}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./editor.vue\")\n}\nvar normalizeComponent = require(\"!../../node_modules/vue-loader/lib/component-normalizer\")\n/* script */\nexport * from \"!!babel-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0!./editor.vue\"\nimport __vue_script__ from \"!!babel-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0!./editor.vue\"\n/* template */\nimport __vue_template__ from \"!!../../node_modules/vue-loader/lib/template-compiler/index?{\\\"id\\\":\\\"data-v-52b2b71a\\\",\\\"hasScoped\\\":false,\\\"buble\\\":{\\\"transforms\\\":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0!./editor.vue\"\n/* template functional */\nvar __vue_template_functional__ = false\n/* styles */\nvar __vue_styles__ = injectStyle\n/* scopeId */\nvar __vue_scopeId__ = null\n/* moduleIdentifier (server only) */\nvar __vue_module_identifier__ = null\nvar Component = normalizeComponent(\n  __vue_script__,\n  __vue_template__,\n  __vue_template_functional__,\n  __vue_styles__,\n  __vue_scopeId__,\n  __vue_module_identifier__\n)\n\nexport default Component.exports\n"
         },
         {
           "id": 47,
-          "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-style-loader/index.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-          "name": "./node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!./node_modules/vue-style-loader!./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+          "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-style-loader/index.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+          "name": "./node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!./node_modules/vue-style-loader!./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
           "index": 8,
           "index2": 6,
           "size": 41,
@@ -2852,7 +2852,7 @@
               "module": "./src/js/editor.vue",
               "moduleName": "./src/js/editor.vue",
               "type": "cjs require",
-              "userRequest": "!!../../node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!vue-style-loader!css-loader?{\"url\":true}!../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!postcss-loader?{\"config\":{\"ctx\":{\"normalize\":false}}}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./editor.vue",
+              "userRequest": "!!../../node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!vue-style-loader!css-loader?{\"url\":true}!../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!postcss-loader?{\"config\":{\"ctx\":{\"normalize\":false}}}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./editor.vue",
               "loc": "2:2-436"
             }
           ],
@@ -4346,11 +4346,11 @@
         },
         {
           "id": 87,
-          "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-62cc53c3\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=template&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-          "name": "./node_modules/vue-loader/lib/template-compiler?{\"id\":\"data-v-62cc53c3\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/js/editor.vue",
+          "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-52b2b71a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=template&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+          "name": "./node_modules/vue-loader/lib/template-compiler?{\"id\":\"data-v-52b2b71a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/js/editor.vue",
           "index": 87,
           "index2": 85,
-          "size": 494,
+          "size": 510,
           "cacheable": true,
           "built": true,
           "optional": false,
@@ -4372,7 +4372,7 @@
               "module": "./src/js/editor.vue",
               "moduleName": "./src/js/editor.vue",
               "type": "harmony import",
-              "userRequest": "!!../../node_modules/vue-loader/lib/template-compiler/index?{\"id\":\"data-v-62cc53c3\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0!./editor.vue",
+              "userRequest": "!!../../node_modules/vue-loader/lib/template-compiler/index?{\"id\":\"data-v-52b2b71a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0!./editor.vue",
               "loc": "9:0-247"
             }
           ],
@@ -4384,7 +4384,7 @@
           ],
           "optimizationBailout": [],
           "depth": 2,
-          "source": "var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:\"editor\",staticClass:\"vp-editor\"},[((_vm.vpContent === '' || _vm.vpContent === '<br>') && _vm.placeholder)?_c('div',{staticClass:\"vp-editor__placeholder\",on:{\"click\":function($event){_vm.$refs.editor.content.focus()}}},[_vm._v(_vm._s(_vm.placeholder))]):_vm._e()])}\nvar staticRenderFns = []\nvar esExports = { render: render, staticRenderFns: staticRenderFns }\nexport default esExports"
+          "source": "var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:\"editor\",staticClass:\"vp-editor\"},[((_vm.vpContent === '' || _vm.vpContent === '<br>') && _vm.placeholder)?_c('div',{staticClass:\"vp-editor__placeholder\",on:{\"click\":function($event){_vm.$refs.editor.content.focus()}}},[_vm._v(\"\\n    \"+_vm._s(_vm.placeholder)+\"\\n  \")]):_vm._e()])}\nvar staticRenderFns = []\nvar esExports = { render: render, staticRenderFns: staticRenderFns }\nexport default esExports"
         }
       ],
       "filteredModules": 0,
@@ -6477,7 +6477,7 @@
       "name": "./node_modules/babel-loader/lib!./node_modules/vue-loader/lib/selector.js?type=script&index=0!./src/js/editor.vue",
       "index": 10,
       "index2": 84,
-      "size": 2594,
+      "size": 2792,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -6516,7 +6516,7 @@
       "providedExports": null,
       "optimizationBailout": [],
       "depth": 2,
-      "source": "\"use strict\";\n\nvar _interopRequireDefault = require(\"@babel/runtime/helpers/interopRequireDefault\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _pell = _interopRequireDefault(require(\"./pell\"));\n\n//\n//\n//\n//\n//\n//\nvar _default = {\n  name: 'VuePellEditor',\n  data: function data() {\n    return {\n      vpContent: ''\n    };\n  },\n  beforeDestroy: function beforeDestroy() {\n    this.pell = null;\n  },\n  components: {\n    pell: _pell.default\n  },\n  mounted: function mounted() {\n    this.init();\n  },\n  methods: {\n    init: function init() {\n      var _this = this;\n\n      if (this.$el) {\n        var options = {\n          element: this.$refs.editor,\n          onChange: function onChange(html) {\n            _this.vpContent = html;\n\n            _this.$emit('input', html);\n\n            _this.$emit('change', {\n              editor: _this.pell,\n              html: html\n            });\n          },\n          styleWithCSS: this.styleWithCss\n        };\n\n        if (this.actions && this.actions.length > 0) {\n          options.actions = this.actions;\n        }\n\n        this.pell = _pell.default.init(options);\n        window.pell = this.pell;\n\n        if (this.content || this.value) {\n          this.$refs.editor.content.innerHTML = this.content || this.value;\n          this.vpContent = this.content || this.value;\n        }\n\n        if (this.editorHeight) {\n          this.$refs.editor.content.style.height = this.editorHeight;\n        }\n      }\n    }\n  },\n  props: {\n    actions: {\n      type: Array\n    },\n    content: {\n      type: String\n    },\n    value: {\n      type: String\n    },\n    placeholder: {\n      type: String,\n      default: 'Write something amazing...'\n    },\n    editorHeight: {\n      default: false\n    },\n    styleWithCss: {\n      type: Boolean,\n      default: false\n    }\n  },\n  watch: {\n    content: function content(newVal, oldVal) {\n      // eslint-disable-line\n      if (this.pell) {\n        if (!!newVal && newVal !== this.vpContent) {\n          this.vpContent = newVal;\n          this.$refs.editor.content.innerHTML = newVal;\n        } else if (!newVal) {\n          this.$refs.editor.content.innerHTML = '';\n        }\n      }\n    },\n    value: function value(newVal, oldVal) {\n      // eslint-disable-line\n      if (this.pell) {\n        if (!!newVal && newVal !== this.vpContent) {\n          this.vpContent = newVal;\n          this.$refs.editor.content.innerHTML = newVal;\n        } else if (!newVal) {\n          this.$refs.editor.content.innerHTML = '';\n        }\n      }\n    }\n  }\n};\nexports.default = _default;"
+      "source": "\"use strict\";\n\nvar _interopRequireDefault = require(\"@babel/runtime/helpers/interopRequireDefault\");\n\nObject.defineProperty(exports, \"__esModule\", {\n  value: true\n});\nexports.default = void 0;\n\nvar _pell = _interopRequireDefault(require(\"./pell\"));\n\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\n//\nvar _default2 = {\n  name: 'VuePellEditor',\n  components: {\n    pell: _pell.default\n  },\n  props: {\n    actions: {\n      type: Array,\n      default: function _default() {\n        return [];\n      }\n    },\n    content: {\n      type: String,\n      default: ''\n    },\n    value: {\n      type: String,\n      default: ''\n    },\n    placeholder: {\n      type: String,\n      default: 'Write something amazing...'\n    },\n    editorHeight: {\n      type: String,\n      default: ''\n    },\n    styleWithCss: {\n      type: Boolean,\n      default: false\n    }\n  },\n  data: function data() {\n    return {\n      vpContent: ''\n    };\n  },\n  watch: {\n    content: function content(newVal, oldVal) {\n      // eslint-disable-line\n      if (this.pell) {\n        if (!!newVal && newVal !== this.vpContent) {\n          this.vpContent = newVal;\n          this.$refs.editor.content.innerHTML = newVal;\n        } else if (!newVal) {\n          this.$refs.editor.content.innerHTML = '';\n        }\n      }\n    },\n    value: function value(newVal, oldVal) {\n      // eslint-disable-line\n      if (this.pell) {\n        if (!!newVal && newVal !== this.vpContent) {\n          this.vpContent = newVal;\n          this.$refs.editor.content.innerHTML = newVal;\n        } else if (!newVal) {\n          this.$refs.editor.content.innerHTML = '';\n        }\n      }\n    }\n  },\n  beforeDestroy: function beforeDestroy() {\n    this.pell = null;\n  },\n  mounted: function mounted() {\n    this.init();\n  },\n  methods: {\n    init: function init() {\n      var _this = this;\n\n      if (this.$el) {\n        var options = {\n          element: this.$refs.editor,\n          onChange: function onChange(html) {\n            _this.vpContent = html;\n\n            _this.$emit('input', html);\n\n            _this.$emit('change', {\n              editor: _this.pell,\n              html: html\n            });\n          },\n          styleWithCSS: this.styleWithCss\n        };\n\n        if (this.actions && this.actions.length > 0) {\n          options.actions = this.actions;\n        }\n\n        var pellEditor = _pell.default.init(options);\n\n        this.pell = pellEditor;\n        window.pell = _pell.default;\n\n        if (this.content || this.value) {\n          this.$refs.editor.content.innerHTML = this.content || this.value;\n          this.vpContent = this.content || this.value;\n        }\n\n        if (this.editorHeight !== '') {\n          this.$refs.editor.content.style.height = this.editorHeight;\n        }\n      }\n    }\n  }\n};\nexports.default = _default2;"
     },
     {
       "id": 32,
@@ -6674,9 +6674,9 @@
         0
       ],
       "assets": [],
-      "issuer": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/core-js/library/modules/_object-dp.js",
-      "issuerId": 5,
-      "issuerName": "./node_modules/core-js/library/modules/_object-dp.js",
+      "issuer": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/core-js/library/modules/_object-gopd.js",
+      "issuerId": 83,
+      "issuerName": "./node_modules/core-js/library/modules/_object-gopd.js",
       "failed": false,
       "errors": 0,
       "warnings": 0,
@@ -7159,12 +7159,12 @@
       "providedExports": null,
       "optimizationBailout": [],
       "depth": 1,
-      "source": "function injectStyle (ssrContext) {\n  require(\"!!../../node_modules/extract-text-webpack-plugin/dist/loader.js?{\\\"omit\\\":1,\\\"remove\\\":true}!vue-style-loader!css-loader?{\\\"url\\\":true}!../../node_modules/vue-loader/lib/style-compiler/index?{\\\"vue\\\":true,\\\"id\\\":\\\"data-v-62cc53c3\\\",\\\"scoped\\\":false,\\\"hasInlineConfig\\\":false}!postcss-loader?{\\\"config\\\":{\\\"ctx\\\":{\\\"normalize\\\":false}}}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./editor.vue\")\n}\nvar normalizeComponent = require(\"!../../node_modules/vue-loader/lib/component-normalizer\")\n/* script */\nexport * from \"!!babel-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0!./editor.vue\"\nimport __vue_script__ from \"!!babel-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0!./editor.vue\"\n/* template */\nimport __vue_template__ from \"!!../../node_modules/vue-loader/lib/template-compiler/index?{\\\"id\\\":\\\"data-v-62cc53c3\\\",\\\"hasScoped\\\":false,\\\"buble\\\":{\\\"transforms\\\":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0!./editor.vue\"\n/* template functional */\nvar __vue_template_functional__ = false\n/* styles */\nvar __vue_styles__ = injectStyle\n/* scopeId */\nvar __vue_scopeId__ = null\n/* moduleIdentifier (server only) */\nvar __vue_module_identifier__ = null\nvar Component = normalizeComponent(\n  __vue_script__,\n  __vue_template__,\n  __vue_template_functional__,\n  __vue_styles__,\n  __vue_scopeId__,\n  __vue_module_identifier__\n)\n\nexport default Component.exports\n"
+      "source": "function injectStyle (ssrContext) {\n  require(\"!!../../node_modules/extract-text-webpack-plugin/dist/loader.js?{\\\"omit\\\":1,\\\"remove\\\":true}!vue-style-loader!css-loader?{\\\"url\\\":true}!../../node_modules/vue-loader/lib/style-compiler/index?{\\\"vue\\\":true,\\\"id\\\":\\\"data-v-52b2b71a\\\",\\\"scoped\\\":false,\\\"hasInlineConfig\\\":false}!postcss-loader?{\\\"config\\\":{\\\"ctx\\\":{\\\"normalize\\\":false}}}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./editor.vue\")\n}\nvar normalizeComponent = require(\"!../../node_modules/vue-loader/lib/component-normalizer\")\n/* script */\nexport * from \"!!babel-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0!./editor.vue\"\nimport __vue_script__ from \"!!babel-loader!../../node_modules/vue-loader/lib/selector?type=script&index=0!./editor.vue\"\n/* template */\nimport __vue_template__ from \"!!../../node_modules/vue-loader/lib/template-compiler/index?{\\\"id\\\":\\\"data-v-52b2b71a\\\",\\\"hasScoped\\\":false,\\\"buble\\\":{\\\"transforms\\\":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0!./editor.vue\"\n/* template functional */\nvar __vue_template_functional__ = false\n/* styles */\nvar __vue_styles__ = injectStyle\n/* scopeId */\nvar __vue_scopeId__ = null\n/* moduleIdentifier (server only) */\nvar __vue_module_identifier__ = null\nvar Component = normalizeComponent(\n  __vue_script__,\n  __vue_template__,\n  __vue_template_functional__,\n  __vue_styles__,\n  __vue_scopeId__,\n  __vue_module_identifier__\n)\n\nexport default Component.exports\n"
     },
     {
       "id": 47,
-      "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-style-loader/index.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-      "name": "./node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!./node_modules/vue-style-loader!./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+      "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-style-loader/index.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+      "name": "./node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!./node_modules/vue-style-loader!./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
       "index": 8,
       "index2": 6,
       "size": 41,
@@ -7189,7 +7189,7 @@
           "module": "./src/js/editor.vue",
           "moduleName": "./src/js/editor.vue",
           "type": "cjs require",
-          "userRequest": "!!../../node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!vue-style-loader!css-loader?{\"url\":true}!../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!postcss-loader?{\"config\":{\"ctx\":{\"normalize\":false}}}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./editor.vue",
+          "userRequest": "!!../../node_modules/extract-text-webpack-plugin/dist/loader.js?{\"omit\":1,\"remove\":true}!vue-style-loader!css-loader?{\"url\":true}!../../node_modules/vue-loader/lib/style-compiler/index?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!postcss-loader?{\"config\":{\"ctx\":{\"normalize\":false}}}!sass-loader!../../node_modules/vue-loader/lib/selector?type=styles&index=0!./editor.vue",
           "loc": "2:2-436"
         }
       ],
@@ -8683,11 +8683,11 @@
     },
     {
       "id": 87,
-      "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-62cc53c3\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=template&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-      "name": "./node_modules/vue-loader/lib/template-compiler?{\"id\":\"data-v-62cc53c3\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/js/editor.vue",
+      "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/template-compiler/index.js?{\"id\":\"data-v-52b2b71a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=template&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+      "name": "./node_modules/vue-loader/lib/template-compiler?{\"id\":\"data-v-52b2b71a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!./node_modules/vue-loader/lib/selector.js?type=template&index=0!./src/js/editor.vue",
       "index": 87,
       "index2": 85,
-      "size": 494,
+      "size": 510,
       "cacheable": true,
       "built": true,
       "optional": false,
@@ -8709,7 +8709,7 @@
           "module": "./src/js/editor.vue",
           "moduleName": "./src/js/editor.vue",
           "type": "harmony import",
-          "userRequest": "!!../../node_modules/vue-loader/lib/template-compiler/index?{\"id\":\"data-v-62cc53c3\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0!./editor.vue",
+          "userRequest": "!!../../node_modules/vue-loader/lib/template-compiler/index?{\"id\":\"data-v-52b2b71a\",\"hasScoped\":false,\"buble\":{\"transforms\":{}}}!../../node_modules/vue-loader/lib/selector?type=template&index=0!./editor.vue",
           "loc": "9:0-247"
         }
       ],
@@ -8721,7 +8721,7 @@
       ],
       "optimizationBailout": [],
       "depth": 2,
-      "source": "var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:\"editor\",staticClass:\"vp-editor\"},[((_vm.vpContent === '' || _vm.vpContent === '<br>') && _vm.placeholder)?_c('div',{staticClass:\"vp-editor__placeholder\",on:{\"click\":function($event){_vm.$refs.editor.content.focus()}}},[_vm._v(_vm._s(_vm.placeholder))]):_vm._e()])}\nvar staticRenderFns = []\nvar esExports = { render: render, staticRenderFns: staticRenderFns }\nexport default esExports"
+      "source": "var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',{ref:\"editor\",staticClass:\"vp-editor\"},[((_vm.vpContent === '' || _vm.vpContent === '<br>') && _vm.placeholder)?_c('div',{staticClass:\"vp-editor__placeholder\",on:{\"click\":function($event){_vm.$refs.editor.content.focus()}}},[_vm._v(\"\\n    \"+_vm._s(_vm.placeholder)+\"\\n  \")]):_vm._e()])}\nvar staticRenderFns = []\nvar esExports = { render: render, staticRenderFns: staticRenderFns }\nexport default esExports"
     }
   ],
   "filteredModules": 0,
@@ -8760,8 +8760,8 @@
           "modules": [
             {
               "id": 0,
-              "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-              "name": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+              "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+              "name": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
               "index": 0,
               "index2": 1,
               "size": 834,
@@ -8801,18 +8801,18 @@
                 0
               ],
               "assets": [],
-              "issuer": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+              "issuer": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
               "issuerId": 0,
-              "issuerName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+              "issuerName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
               "failed": false,
               "errors": 0,
               "warnings": 0,
               "reasons": [
                 {
                   "moduleId": 0,
-                  "moduleIdentifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-                  "module": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
-                  "moduleName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+                  "moduleIdentifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+                  "module": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+                  "moduleName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
                   "type": "cjs require",
                   "userRequest": "../../node_modules/css-loader/lib/css-base.js",
                   "loc": "1:27-83"
@@ -8829,9 +8829,9 @@
           "origins": [
             {
               "moduleId": 0,
-              "module": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-              "moduleIdentifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-              "moduleName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+              "module": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+              "moduleIdentifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+              "moduleName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
               "loc": "",
               "reasons": []
             }
@@ -8841,8 +8841,8 @@
       "modules": [
         {
           "id": 0,
-          "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-          "name": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+          "identifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+          "name": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
           "index": 0,
           "index2": 1,
           "size": 834,
@@ -8882,18 +8882,18 @@
             0
           ],
           "assets": [],
-          "issuer": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+          "issuer": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
           "issuerId": 0,
-          "issuerName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+          "issuerName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
           "failed": false,
           "errors": 0,
           "warnings": 0,
           "reasons": [
             {
               "moduleId": 0,
-              "moduleIdentifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
-              "module": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
-              "moduleName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+              "moduleIdentifier": "/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/css-loader/index.js?{\"url\":true}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/sass-loader/lib/loader.js!/Applications/MAMP/htdocs/_git/vue-pell-editor/node_modules/vue-loader/lib/selector.js?type=styles&index=0!/Applications/MAMP/htdocs/_git/vue-pell-editor/src/js/editor.vue",
+              "module": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
+              "moduleName": "./node_modules/css-loader?{\"url\":true}!./node_modules/vue-loader/lib/style-compiler?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!./node_modules/postcss-loader/lib?{\"config\":{\"ctx\":{\"normalize\":false}}}!./node_modules/sass-loader/lib/loader.js!./node_modules/vue-loader/lib/selector.js?type=styles&index=0!./src/js/editor.vue",
               "type": "cjs require",
               "userRequest": "../../node_modules/css-loader/lib/css-base.js",
               "loc": "1:27-83"
@@ -8908,7 +8908,7 @@
       ],
       "filteredModules": 0,
       "children": [],
-      "name": "extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js?{\"url\":true}!node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-62cc53c3\",\"scoped\":false,\"hasInlineConfig\":false}!node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!node_modules/sass-loader/lib/loader.js!node_modules/vue-loader/lib/selector.js?type=styles&index=0!src/js/editor.vue"
+      "name": "extract-text-webpack-plugin node_modules/extract-text-webpack-plugin/dist node_modules/css-loader/index.js?{\"url\":true}!node_modules/vue-loader/lib/style-compiler/index.js?{\"vue\":true,\"id\":\"data-v-52b2b71a\",\"scoped\":false,\"hasInlineConfig\":false}!node_modules/postcss-loader/lib/index.js?{\"config\":{\"ctx\":{\"normalize\":false}}}!node_modules/sass-loader/lib/loader.js!node_modules/vue-loader/lib/selector.js?type=styles&index=0!src/js/editor.vue"
     }
   ]
 }
