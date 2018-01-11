@@ -44,6 +44,7 @@
           }
 
           this.pell = pell.init(options)
+          window.pell = this.pell
 
           if (this.content || this.value) {
             this.$refs.editor.content.innerHTML = (this.content || this.value)

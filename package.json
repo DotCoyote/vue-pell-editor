@@ -1,6 +1,6 @@
 {
   "name": "vue-pell-editor",
-  "version": "0.0.12",
+  "version": "0.0.14",
   "description": "pell editor component for Vue",
   "license": "MIT",
   "author": {
@@ -42,15 +42,19 @@
   "devDependencies": {
     "@babel/cli": "^7.0.0-beta.36",
     "@babel/core": "^7.0.0-beta.36",
+    "@babel/plugin-proposal-class-properties": "^7.0.0-beta.36",
+    "@babel/plugin-proposal-object-rest-spread": "^7.0.0-beta.36",
     "@babel/plugin-syntax-dynamic-import": "^7.0.0-beta.36",
     "@babel/plugin-transform-runtime": "^7.0.0-beta.36",
     "@babel/polyfill": "^7.0.0-beta.36",
     "@babel/preset-env": "^7.0.0-beta.36",
     "@babel/register": "^7.0.0-beta.36",
+    "@babel/runtime": "^7.0.0-beta.36",
     "ansi-html": "^0.0.7",
     "autoprefixer": "^7.1.1",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^8.0.0-beta.0",
+    "babel-plugin-dynamic-import-node": "^1.1.0",
     "browser-sync": "^2.18.7",
     "cross-env": "^5.0.0",
     "css-loader": "^0.26.1",
@@ -134,7 +138,6 @@
     "webpack-config-utils": "^2.3.0",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
-    "webpack-merge": "^2.6.1",
     "webpack2-polyfill-plugin": "^0.0.2",
     "write-file-webpack-plugin": "^4.1.0",
     "yargs": "^6.6.0"
