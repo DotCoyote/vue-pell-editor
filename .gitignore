@@ -88,3 +88,20 @@ $RECYCLE.BIN/
 .Trashes
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
+
+# Master Branch
+.babelrc
+.browserslistrc
+.editorconfig
+.eslintrc-dev.js
+.eslintrc.js
+.nvmrc
+.sass-lint.yml
+.stylelintrc
+config.json
+gulpfile.babel.js
+gulpfile
+nodescripts
+webpack
+postcss.config.js
+yarn.lock
