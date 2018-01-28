@@ -21,6 +21,7 @@ $ yarn add vue-pell-editor
         :placeholder="editorPlaceholder"
         v-model="editorContent"
         :styleWithCss="false"
+        :classes="editorClasses"
         editorHeight="400px"
         @change="doSomething"
     />
@@ -61,7 +62,12 @@ $ yarn add vue-pell-editor
               }
             ],
             editorPlaceholder: 'Write something amazing...',
-            editorContent: '<div>Predefined Content</div>'
+            editorContent: '<div>Predefined Content</div>',
+            editorClasses: {
+              actionbar: 'pell-actionbar-custom-name',
+              button: 'pell-button-custom-name',
+              content: 'pell-content-custom-name'
+            }
         }),
         components: {
             VuePellEditor

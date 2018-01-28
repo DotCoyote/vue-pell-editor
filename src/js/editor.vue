@@ -45,6 +45,10 @@ export default {
     styleWithCss: {
       type: Boolean,
       default: false
+    },
+    classes: {
+      type: Object,
+      default: () => {}
     }
   },
   data: () => ({
@@ -92,6 +96,7 @@ export default {
               html: html
             })
           },
+          classes: this.classes,
 
           styleWithCSS: this.styleWithCss
         }
