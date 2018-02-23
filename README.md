@@ -24,6 +24,7 @@ $ yarn add vue-pell-editor
         :classes="editorClasses"
         editorHeight="400px"
         @change="doSomething"
+        @mounted="doSomethingAfterMounted"
     />
 </template>
 
@@ -74,7 +75,10 @@ $ yarn add vue-pell-editor
         },
         methods: {
             doSomething () {
-                console.log('Hello')
+              console.log('Hello')
+            },
+            doSomethingAfterMounted () {
+              console.log('Editor mounted')
             }
         }
     }
