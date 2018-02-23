@@ -81,6 +81,7 @@ export default {
   },
   mounted () {
     this.init()
+    this.$emit('mounted')
   },
   methods: {
     init () {
