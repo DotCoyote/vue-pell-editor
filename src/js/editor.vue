@@ -14,7 +14,7 @@
 </template>
 
 <script>
-import pell from './pell'
+import pell from 'pell'
 
 export default {
   name: 'VuePellEditor',
@@ -49,7 +49,11 @@ export default {
     classes: {
       type: Object,
       default: () => {}
-    }
+    },
+	defaultParagraphSeparator : {
+		type : String,
+		default : 'div'
+	}
   },
   data: () => ({
     vpContent: ''
@@ -99,7 +103,9 @@ export default {
           },
           classes: this.classes,
 
-          styleWithCSS: this.styleWithCss
+          styleWithCSS: this.styleWithCss,
+
+		  defaultParagraphSeparator: this.defaultParagraphSeparator
         }
 
         if (this.actions && this.actions.length > 0) {
