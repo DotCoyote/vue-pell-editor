@@ -1,0 +1,9 @@
+tests
+webpack
+dist/*.html
+dist/main.js
+.*
+*.config.js
+tsconfig.json
+*.lock
+package-lock.json
