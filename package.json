@@ -20,7 +20,7 @@
   "repository": "https://github.com/CinKon/vue-pell-editor.git",
   "scripts": {},
   "dependencies": {
-    "pell": "^0.5.0",
+    "pell": "^1.0.4",
     "vue": "^2.4.0"
   },
   "engines": {
