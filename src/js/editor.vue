@@ -50,16 +50,17 @@ export default {
       type: Object,
       default: () => {}
     },
-	defaultParagraphSeparator : {
-		type : String,
-		default : 'div'
-	}
+    defaultParagraphSeparator: {
+      type: String,
+      default: 'div'
+    }
   },
   data: () => ({
     vpContent: ''
   }),
   watch: {
-    content: function (newVal, oldVal) { // eslint-disable-line
+    // eslint-disable-next-line
+    content: function(newVal, oldVal) {
       if (this.pell) {
         if (!!newVal && newVal !== this.vpContent) {
           this.vpContent = newVal
@@ -69,7 +70,8 @@ export default {
         }
       }
     },
-    value: function (newVal, oldVal) { // eslint-disable-line
+    // eslint-disable-next-line
+    value: function(newVal, oldVal) {
       if (this.pell) {
         if (!!newVal && newVal !== this.vpContent) {
           this.vpContent = newVal
@@ -80,15 +82,15 @@ export default {
       }
     }
   },
-  beforeDestroy () {
+  beforeDestroy() {
     this.pell = null
   },
-  mounted () {
+  mounted() {
     this.init()
     this.$emit('mounted')
   },
   methods: {
-    init () {
+    init() {
       if (this.$el) {
         const options = {
           element: this.$refs.editor,
@@ -105,7 +107,7 @@ export default {
 
           styleWithCSS: this.styleWithCss,
 
-		  defaultParagraphSeparator: this.defaultParagraphSeparator
+          defaultParagraphSeparator: this.defaultParagraphSeparator
         }
 
         if (this.actions && this.actions.length > 0) {
@@ -118,8 +120,8 @@ export default {
         window.pell = pell
 
         if (this.content || this.value) {
-          this.$refs.editor.content.innerHTML = (this.content || this.value)
-          this.vpContent = (this.content || this.value)
+          this.$refs.editor.content.innerHTML = this.content || this.value
+          this.vpContent = this.content || this.value
         }
 
         if (this.editorHeight !== '') {
@@ -132,17 +134,17 @@ export default {
 </script>
 
 <style lang="scss">
-  @import '~pell/src/pell';
+@import '~pell/src/pell';
 
-  .vp-editor {
-    position: relative;
+.vp-editor {
+  position: relative;
 
-    &__placeholder {
-      position: absolute;
-      top: 42px;
-      left: 10px;
-      color: #ddd;
-      font-style: italic;
-    }
+  &__placeholder {
+    position: absolute;
+    top: 42px;
+    left: 10px;
+    color: #ddd;
+    font-style: italic;
   }
+}
 </style>

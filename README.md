@@ -1,4 +1,5 @@
 # vue-pell-editor
+
 > Vue wrapper for [pell WYSIWYG text editor](https://github.com/jaredreich/pell)
 
 ## Installation
@@ -20,71 +21,71 @@ $ yarn add vue-pell-editor
         :content="editorContent" 
         :placeholder="editorPlaceholder"
         v-model="editorContent"
-        :styleWithCss="false"
+        :style-with-css="false"
         :classes="editorClasses"
-        editorHeight="400px"
+        default-paragraph-separator="p"
         @change="doSomething"
         @mounted="doSomethingAfterMounted"
     />
 </template>
 
 <script>
-    import VuePellEditor from 'vue-pell-editor'
-    
-    export default {
-        data: () => ({
-            editorContent: '',
-            editorOptions: [
-              'bold',
-              'underline',
-              {
-                name: 'italic',
-                result: () => window.pell.exec('italic')
-              },
-              {
-                name: 'custom',
-                icon: '<b><u><i>C</i></u></b>',
-                title: 'Custom Action',
-                result: () => console.log('YOLO')
-              },
-              {
-                name: 'image',
-                result: () => {
-                  const url = window.prompt('Enter the image URL')
-                  if (url) window.pell.exec('insertImage', ensureHTTP(url))
-                }
-              },
-              {
-                name: 'link',
-                result: () => {
-                  const url = window.prompt('Enter the link URL')
-                  if (url) window.pell.exec('createLink', ensureHTTP(url))
-                }
-              }
-            ],
-            editorPlaceholder: 'Write something amazing...',
-            editorContent: '<div>Predefined Content</div>',
-            editorClasses: {
-              actionbar: 'pell-actionbar-custom-name',
-              button: 'pell-button-custom-name',
-              content: 'pell-content-custom-name'
-            }
-        }),
-        components: {
-            VuePellEditor
-        },
-        methods: {
-            doSomething () {
-              console.log('Hello')
-            },
-            doSomethingAfterMounted () {
-              console.log('Editor mounted')
-            }
+import VuePellEditor from 'vue-pell-editor'
+
+export default {
+  data: () => ({
+    editorContent: '',
+    editorOptions: [
+      'bold',
+      'underline',
+      {
+        name: 'italic',
+        result: () => window.pell.exec('italic')
+      },
+      {
+        name: 'custom',
+        icon: '<b><u><i>C</i></u></b>',
+        title: 'Custom Action',
+        result: () => console.log('YOLO')
+      },
+      {
+        name: 'image',
+        result: () => {
+          const url = window.prompt('Enter the image URL')
+          if (url) window.pell.exec('insertImage', ensureHTTP(url))
         }
+      },
+      {
+        name: 'link',
+        result: () => {
+          const url = window.prompt('Enter the link URL')
+          if (url) window.pell.exec('createLink', ensureHTTP(url))
+        }
+      }
+    ],
+    editorPlaceholder: 'Write something amazing...',
+    editorContent: '<div>Predefined Content</div>',
+    editorClasses: {
+      actionbar: 'pell-actionbar-custom-name',
+      button: 'pell-button-custom-name',
+      content: 'pell-content-custom-name'
     }
+  }),
+  components: {
+    VuePellEditor
+  },
+  methods: {
+    doSomething() {
+      console.log('Hello')
+    },
+    doSomethingAfterMounted() {
+      console.log('Editor mounted')
+    }
+  }
+}
 </script>
 
 <style>
-    @import '~vue-pell-editor/dist/vue-pell-editor.css';
+@import '~vue-pell-editor/dist/vue-pell-editor.css';
 </style>
 ```
