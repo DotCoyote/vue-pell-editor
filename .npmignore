@@ -2,6 +2,10 @@ tests
 webpack
 dist/*.html
 dist/app.js
+src/structure
+src/js/app.vue
+src/js/main.ts
+src/js/shims-*
 .*
 *.config.js
 config.json
