@@ -1,0 +1,19 @@
+{
+  "generator-kittn": {
+    "promptValues": {
+      "projectusage": "webpackApp",
+      "projectcssstructure": "sassAtomic",
+      "projectbreakpointunit": "em",
+      "projectthemecolor": "#29b8f2",
+      "projectstylelint": false,
+      "projectprettier": true,
+      "projecttypescript": true,
+      "projecttestingunit": true,
+      "projecttestinge2e": false,
+      "projecttestingwallaby": false,
+      "projectversion": "0.0.1",
+      "projectmail": "larseichler.le@gmail.com",
+      "projecturl": "https://github.com/CinKon/vue-pell-editor.git"
+    }
+  }
+}

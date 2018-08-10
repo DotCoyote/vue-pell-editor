@@ -12,15 +12,26 @@ $ npm install --save vue-pell-editor
 $ yarn add vue-pell-editor
 ```
 
-**HTML**:
+## Usage
+
+main.js:
+
+```javascript
+import Vue from 'vue'
+import VuePellEditor from 'vue-pell-editor
+
+Vue.use(VuePellEditor)
+```
+
+example.vue:
 
 ```vue
 <template>
-    <VuePellEditor 
+    <vue-pell-editor 
+        v-model="editorContent"
         :actions="editorOptions" 
         :content="editorContent" 
         :placeholder="editorPlaceholder"
-        v-model="editorContent"
         :style-with-css="false"
         :classes="editorClasses"
         default-paragraph-separator="p"
@@ -30,11 +41,8 @@ $ yarn add vue-pell-editor
 </template>
 
 <script>
-import VuePellEditor from 'vue-pell-editor'
-
 export default {
   data: () => ({
-    editorContent: '',
     editorOptions: [
       'bold',
       'underline',
@@ -66,14 +74,12 @@ export default {
     editorPlaceholder: 'Write something amazing...',
     editorContent: '<div>Predefined Content</div>',
     editorClasses: {
-      actionbar: 'pell-actionbar-custom-name',
-      button: 'pell-button-custom-name',
-      content: 'pell-content-custom-name'
+      actionbar: 'pell-actionbar',
+      button: 'pell-button',
+      content: 'pell-content',
+      selected: 'pell-button-selected'
     }
   }),
-  components: {
-    VuePellEditor
-  },
   methods: {
     doSomething() {
       console.log('Hello')
@@ -84,8 +90,14 @@ export default {
   }
 }
 </script>
-
-<style>
-@import '~vue-pell-editor/dist/vue-pell-editor.css';
-</style>
 ```
+
+For the pell-editor-options have a look at the [pell repository](https://github.com/jaredreich/pell#api)
+
+## License
+
+vue-pell-editor is open source and released under the [MIT License](LICENSE).
+
+Copyright (c) 2018 [Lars Eichler](https://twitter.com/cinkon).
+
+> _PS: You're a happy user of vue-pell-editor. Let me know via Twitter: [@cinkon](https://twitter.com/cinkon)_.

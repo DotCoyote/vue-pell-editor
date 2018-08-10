@@ -1,0 +1,135 @@
+{
+  "dist": {
+    "img": "dist/img/",
+    "dist": "dist/",
+    "base": "dist/",
+    "markup": "dist/",
+    "assets": "dist/",
+    "browserSyncDir": "dist/",
+    "css": "dist/",
+    "js": "dist/",
+    "fonts": "dist/",
+    "cssimg": "dist/",
+    "bitmaps": "dist/assets/img/bitmaps/",
+    "vectors": "dist/assets/img/svgfiles/",
+    "contentimage": "dist/images/",
+    "webpackassets": "./",
+    "webpackpublic": "dist/"
+  },
+  "template": {
+    "globalTitle": "vue-pell-editor",
+    "compiler": false
+  },
+  "browsersync": {
+    "openbrowser": false,
+    "port": 3000
+  },
+  "minify": {
+    "images": {
+      "svgoPlugins": [
+        {
+          "cleanupIDs": false
+        },
+        {
+          "removeComments": true
+        },
+        {
+          "removeViewBox": false
+        },
+        {
+          "removeDesc": true
+        },
+        {
+          "removeUselessDefs": false
+        },
+        {
+          "removeDoctype": true
+        },
+        {
+          "removeEmptyText": true
+        },
+        {
+          "removeUnknownsAndDefaults": true
+        },
+        {
+          "removeEmptyContainers": true
+        },
+        {
+          "collapseGroups": true
+        },
+        {
+          "removeUselessStrokeAndFill": true
+        },
+        {
+          "convertStyleToAttrs": true
+        }
+      ]
+    }
+  },
+  "src": {
+    "baseconf": {
+      "type": "webpackApp",
+      "methodology": "sassAtomic",
+      "structure": "uncompiled",
+      "themeColor": "#29b8f2"
+    },
+    "base": "src/",
+    "style": "src/style/",
+    "template": "src/template/",
+    "js": "src/js/",
+    "scripts": "src/scripts",
+    "structure": "src/structure/",
+    "fonts": "src/fonts/",
+    "images": {
+      "base": "src/images/",
+      "bitmapSprite": {
+        "files": "src/images/bitmapSprite-assets/",
+        "name": "sprite.png"
+      },
+      "vectorSprite": {
+        "files": "src/images/vectorSprite-assets/",
+        "name": "vector-sprite.svg",
+        "symbolName": "symbol-sprite.svg",
+        "maxHeight": 30,
+        "maxWidth": 30,
+        "padding": 0
+      },
+      "bitmaps": "src/images/bitmapSingle-assets/",
+      "vectors": "src/images/vectorSingle-assets/"
+    },
+    "contentimage": "src/images/htmlimages/",
+    "system": "src/.system/",
+    "jsEntryPoints": {
+      "app": "./src/js/main.ts",
+      "vue-pell-editor": "./src/js/vue-pell-editor.ts"
+    }
+  },
+  "files": {
+    "launch": [
+      {
+        "src": "favicons/**",
+        "dest": "assets/img/system/"
+      },
+      {
+        "src": "facebook-og-image.jpg",
+        "dest": "assets/img/system/"
+      },
+      {
+        "src": "twitter-og-image.jpg",
+        "dest": "assets/img/system/"
+      },
+      {
+        "src": ".htaccess",
+        "dest": ""
+      },
+      {
+        "src": "404.html",
+        "dest": ""
+      },
+      {
+        "src": "robots.txt",
+        "dest": ""
+      }
+    ]
+  }
+}

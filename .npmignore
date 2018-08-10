@@ -1,0 +1,11 @@
+tests
+webpack
+dist/*.html
+dist/app.js
+.*
+*.config.js
+config.json
+tsconfig.json
+tslint.json
+*.lock
+package-lock.json
