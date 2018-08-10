@@ -18,7 +18,7 @@ main.js:
 
 ```javascript
 import Vue from 'vue'
-import VuePellEditor from 'vue-pell-editor
+import VuePellEditor from 'vue-pell-editor'
 
 Vue.use(VuePellEditor)
 ```
