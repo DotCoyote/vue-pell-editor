@@ -92,7 +92,7 @@ export default {
 </script>
 ```
 
-For the pell-editor-options have a look at the [pell repository](https://github.com/jaredreich/pell#api)
+For the pell-editor-options have a look at the [pell repository](https://github.com/jaredreich/pell#api).
 
 ## License
 
@@ -100,4 +100,4 @@ vue-pell-editor is open source and released under the [MIT License](LICENSE).
 
 Copyright (c) 2018 [Lars Eichler](https://twitter.com/cinkon).
 
-> _PS: You're a happy user of vue-pell-editor. Let me know via Twitter: [@cinkon](https://twitter.com/cinkon)_.
+> _PS: You're a happy user of vue-pell-editor? Let me know via Twitter: [@cinkon](https://twitter.com/cinkon)_.
