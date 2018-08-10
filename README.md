@@ -34,7 +34,6 @@ import VuePellEditor from 'vue-pell-editor'
 
 export default {
   data: () => ({
-    editorContent: '',
     editorOptions: [
       'bold',
       'underline',
@@ -66,9 +65,10 @@ export default {
     editorPlaceholder: 'Write something amazing...',
     editorContent: '<div>Predefined Content</div>',
     editorClasses: {
-      actionbar: 'pell-actionbar-custom-name',
-      button: 'pell-button-custom-name',
-      content: 'pell-content-custom-name'
+      actionbar: 'pell-actionbar',
+      button: 'pell-button',
+      content: 'pell-content',
+      selected: 'pell-button-selected'
     }
   }),
   components: {
@@ -84,8 +84,6 @@ export default {
   }
 }
 </script>
-
-<style>
-@import '~vue-pell-editor/dist/vue-pell-editor.css';
-</style>
 ```
+
+For the pell-editor-options have a look at the [pell repository](https://github.com/jaredreich/pell#api)

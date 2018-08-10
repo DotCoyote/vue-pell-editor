@@ -1,7 +1,8 @@
+// Main JS File
+import '@babel/polyfill'
 import Vue from 'vue'
 import App from './app'
 import VuePellEditor from './vue-pell-editor'
-
 Vue.use(VuePellEditor)
 
 // Vue App
